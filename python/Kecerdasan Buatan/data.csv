@@ -1,0 +1,11 @@
+ID,Name,Age,Salary,Department,Performance_Score,Bonus
+1,Alice,25,50000,IT,90,
+2,Bob,30,60000,HR,85,
+3,Charlie,35,,Finance,80,
+4,David,40,75000,,95,
+5,Eve,,,IT,88,
+6,Frank,28,55000,HR,,
+7,Grace,33,,Finance,92,
+8,Hank,,70000,IT,,
+9,Ivy,29,72000,HR,87,
+10,Jack,31,58000,,89,
