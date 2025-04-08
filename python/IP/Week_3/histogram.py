@@ -9,20 +9,18 @@ plt.figure(figsize=(10,4))
 
 while True:
     print("=======================")
-    print("1. Original Image")
+    print("1. Gray Image")
     print("2. Histogram Image")
     print("0. Exit Program")
     print("=======================")
     menu = input("Masukkan pilihan : ")
 
     if menu == "1":
-        plt.subplot(1, 2, 1)
         plt.imshow(gray, cmap='gray')
         plt.title('Grayscale Image')
         plt.axis('off')
 
     elif menu == "2":
-        plt.subplot(1, 2, 2)
         plt.plot(hist, color='black')
         plt.title('Grayscale Histogram')
         plt.xlabel('Pixel Intensity')
@@ -30,5 +28,5 @@ while True:
 
     elif menu =="0":
         break
-    
+
     plt.show()

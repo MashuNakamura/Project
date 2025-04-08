@@ -5,11 +5,12 @@ img = cv2.imread('C:/Users/Mashu/OneDrive/Pictures/hima.png')
 
 while True:
     print("=======================")
-    print("1. Original Image")
+    print("1. Gray Image")
     print("2. Translation Image")
     print("3. Rotation Image")
     print("4. Affine Image")
     print("5. Perspective Image")
+    print("0. Exit Program")
     print("=======================")
     menu = input("Masukkan pilihan : ")
 
@@ -48,5 +49,5 @@ while True:
         plt.axis("off")
         plt.show()
 
-    elif menu == "q":
+    elif menu == "0":
         break
