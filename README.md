@@ -51,3 +51,6 @@
 
 ### 30/03/2025
 - Add Praktikum 1 Reff : [here](https://www.freecodecamp.org/news/feature-engineering-and-feature-selection-for-beginners/)
+
+### 09/04/2025
+- Add Tugas 2 IP (PCD)
