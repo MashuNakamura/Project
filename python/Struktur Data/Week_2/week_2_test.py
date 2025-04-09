@@ -1,8 +1,10 @@
+# Data yang akan digunakan
 size = 3
 dataset = []
 top = -1
 status = True
 
+# Fungsi Push Data
 def push(data):
     global top, dataset
     if top == size - 1:
@@ -11,7 +13,8 @@ def push(data):
         print(f"Data berhasil ditambahkan")
         dataset.append(data)
         top += 1
-        
+
+# Fungsi Pop (Delete and return data)
 def pop():
     global top, dataset
     if top == - 1:
@@ -21,19 +24,22 @@ def pop():
         del dataset[top]
         top -= 1
 
+# Fungsi Clear atau menghapus data
 def clear():
     global top
     top = - 1
     print("Dataset berhasil`di clear !")
     dataset.clear()
 
+# Fungsi Peek atau mengintip data
 def peek():
     if dataset:
         print(f"Mengintip data {dataset[-1]}")
     else:
         print("Stack kosong")
         return None
- 
+
+# Looping Menu
 while status == True:
     print('Dataset: '+ str(dataset))
     pilihan = int(input('Pilih: 1.Push | 2. Pop | 3. Clear | 4. Peek: '))
