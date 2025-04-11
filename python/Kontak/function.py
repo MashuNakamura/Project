@@ -26,6 +26,7 @@ def kontak_baru():
         "email" : email,
         "telepon" : telepon
     }
+    print(f"{nama} berhasil ditambahkan")
     return tmp_kontak
 
 def hapus_kontak(daftar_kontak):
@@ -36,7 +37,7 @@ def hapus_kontak(daftar_kontak):
 
     if 1 <= user <= len(daftar_kontak):
         deleted = daftar_kontak.pop(user - 1)
-        print(f"{deleted} berhasil dihapus.")
+        print(f"{deleted["nama"]} berhasil dihapus.")
     else:
         print("Nomor tidak valid.")
 
