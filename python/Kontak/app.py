@@ -2,26 +2,10 @@ import function
 
 # List of Dictionary
 daftar_kontak = [
-    {
-        "nama": "Mashu",
-        "email": "federicomatthewpratamaa@gmail.com",
-        "telepon": "00000"
-    },
-    {
-        "nama": "Arthur",
-        "email": "arthur@gmail.com",
-        "telepon": "2221112"
-    },
-    {
-        "nama": "Badut",
-        "email": "anjingkaubadutbeban@gmail.com",
-        "telepon": "12121131"
-    },
-    {
-        "nama": "Jefferey",
-        "email": "jeffereymonyet@gmail.com",
-        "telepon": "12345"
-    }
+    { "nama": "Mashu", "email": "federicomatthewpratamaa@gmail.com", "telepon": "00000" },
+    { "nama": "Arthur", "email": "arthur@gmail.com", "telepon": "2221112" },
+    { "nama": "Badut", "email": "anjingkaubadutbeban@gmail.com", "telepon": "12121131" },
+    { "nama": "Jefferey", "email": "jeffereymonyet@gmail.com", "telepon": "12345" }
 ]
 
 while True:
@@ -42,9 +26,12 @@ while True:
 
     # Display All Contact
     elif menu == "1":
-        function.take_name(daftar_kontak)
-        menu_kontak = input("Pilih Nama Kontak : ")
-        function.display_kontak(daftar_kontak, int(menu_kontak) - 1)
+        while True:
+            function.take_name(daftar_kontak)
+            menu_kontak = int(input("Pilih Nama Kontak : "))
+            if menu_kontak == 0:
+                break
+            function.display_kontak(daftar_kontak, int(menu_kontak) - 1)
 
     # Add New Contact (Temporary) because its only python not using db
     elif menu == "2":
@@ -64,4 +51,4 @@ while True:
         print("Data Harus Integer !")
 
 # Print when the program is done
-print("Program telah selesai")
+print("Tuhan Memberkati.")

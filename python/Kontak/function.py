@@ -1,13 +1,21 @@
 def take_name(daftar_kontak):
     for i, kontak in enumerate(daftar_kontak, start=1):
         print(f"{i}. {kontak['nama']}")
+    print("0. Kembali")
+    print("===========================")
 
 def display_kontak(daftar_kontak, index: int):
-    selected = daftar_kontak[index]
-    print("===========================")
-    print(f"Nama    : {selected["nama"]}")
-    print(f"Email   : {selected["email"]}")
-    print(f"Telepon : {selected["telepon"]}")
+    if 0 <= index < len(daftar_kontak):
+        selected = daftar_kontak[index]
+        print("===========================")
+        print(f"Nama    : {selected["nama"]}")
+        print(f"Email   : {selected["email"]}")
+        print(f"Telepon : {selected["telepon"]}")
+        print("===========================")
+    else:
+        print("===========================")
+        print("Tidak ada dalam List !")
+        print("===========================")
 
 def kontak_baru():
     nama = input("Masukkan Nama : ")
@@ -21,78 +29,58 @@ def kontak_baru():
     return tmp_kontak
 
 def hapus_kontak(daftar_kontak):
-    index = -1
-    check = int(input("Pilih mode 1. Nama 2. Number : "))
+    for i, value in enumerate(daftar_kontak, start = 1):
+        print(f"{i}. {value["nama"]}")
 
-    if check == 1:
-        nama = input("Nama Kontak yang ingin dihapus : ").lower()
-        for i in range(0, len(daftar_kontak)):
-            kontak = daftar_kontak[i]
-            if nama.lower() == kontak["nama"].lower():
-                index = i
-                break
+    user = int(input("Nomor Berapa yang ingin dihapus? "))
 
-    if check == 2:
-        telepon = input("No Telepon yang akan dihapus: ")
-        for i in range(0, len(daftar_kontak)):
-            kontak = daftar_kontak[i]
-            if telepon == kontak["telepon"]:
-                index = i 
-                break
-
-    if index == -1:
-        print("===========================")
-        print("Tidak ditemukan")
-        
+    if 1 <= user <= len(daftar_kontak):
+        deleted = daftar_kontak.pop(user - 1)
+        print(f"{deleted} berhasil dihapus.")
     else:
-        del daftar_kontak[index]
-        print("===========================")
-        print("Berhasil dihapus")
+        print("Nomor tidak valid.")
 
 def cari_kontak(daftar_kontak):
     while True:
-        try:
-            print("1. Nama")
-            print("2. Number")
-            check = int(input("Search mode : "))
-            check_boolean = False
-            
-            if check == 1:
-                search = input("Cari kontak dengan nama : ")
-                for kontak in daftar_kontak:
-                    nama = kontak["nama"].lower()
-                    if nama.find(search) != -1:
-                        print("===========================")
-                        print(f"Nama    : {kontak["nama"]}")
-                        print(f"Email   : {kontak["email"]}")
-                        print(f"Telepon : {kontak["telepon"]}")
-                        check_boolean = True
-                    break
-                if check_boolean == False:
+        print("===========================")
+        print("1. Nama")
+        print("2. Number")
+        print("0. Kembali")
+        print("===========================")
+        check = int(input("Search mode : "))
+        check_boolean = False
+        
+        if check == 1:
+            search = input("Cari kontak dengan nama : ").lower()
+            for kontak in daftar_kontak:
+                if search in kontak['nama'].lower():
                     print("===========================")
-                    print("Tidak ditemukan")
-                    print("===========================")
-                    continue
-                break
+                    print(f"Nama    : {kontak['nama']}")
+                    print(f"Email   : {kontak['email']}")
+                    print(f"Telepon : {kontak['telepon']}")
+                    check_boolean = True
+            if check_boolean == False:
+                print("===========================")
+                print("Tidak ditemukan")
+                print("===========================")
+            continue
 
-            if check == 2:
-                search = input("Cari kontak dengan nomor : ")
-                for kontak in daftar_kontak:
-                    number = kontak["telepon"]
-                    if number.find(search) != -1:
-                        print("===========================")
-                        print(f"Nama    : {kontak["nama"]}")
-                        print(f"Email   : {kontak["email"]}")
-                        print(f"Telepon : {kontak["telepon"]}")
-                        check_boolean = True
-                    break
-                if check_boolean == False:
+        elif check == 2:
+            search = input("Cari kontak dengan nomor : ")
+            for kontak in daftar_kontak:
+                if search in kontak["telepon"]:
                     print("===========================")
-                    print("Tidak ditemukan")
-                    print("===========================")
-                    continue
-                break
-        except:
-            print("===========================")
-            print("Data harus Integer !")
-            continue        
+                    print(f"Nama    : {kontak['nama']}")
+                    print(f"Email   : {kontak['email']}")
+                    print(f"Telepon : {kontak['telepon']}")
+                    check_boolean = True
+            if check_boolean == False:
+                print("===========================")
+                print("Tidak ditemukan")
+                print("===========================")
+            continue
+        elif check == 0:
+            break
+        else:
+            print("Pilihan tidak valid. Masukkan 1 atau 2.")
+            continue
