@@ -33,13 +33,16 @@ def hapus_kontak(daftar_kontak):
     for i, value in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {value["nama"]}")
 
+    print("===========================")
     user = int(input("Nomor Berapa yang ingin dihapus? "))
 
     if 1 <= user <= len(daftar_kontak):
         deleted = daftar_kontak.pop(user - 1)
+        print("===========================")
         print(f"{deleted["nama"]} berhasil dihapus.")
     else:
-        print("Nomor tidak valid.")
+        print("===========================")
+        print("Tidak ada dalam List !")
 
 def cari_kontak(daftar_kontak):
     while True:
