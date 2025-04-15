@@ -1,5 +1,5 @@
 import cv2, numpy as np, matplotlib.pyplot as plt
-import original, translation, rotation, affine, perspective
+import original, translation, rotation, affine, perspective, transformation_3d
 
 img = cv2.imread('C:/Users/Mashu/OneDrive/Pictures/hima.png')
 
@@ -46,6 +46,13 @@ while True:
         hasil = perspective.perspective_image(img)
         plt.imshow(hasil, cmap='gray')
         plt.title("Perspective")
+        plt.axis("off")
+        plt.show()
+
+    elif menu == "6":
+        hasil = transformation_3d.transformation_3d(img)
+        plt.imshow(hasil, cmap='gray')
+        plt.title("Efek 3D Perspektif")
         plt.axis("off")
         plt.show()
 
