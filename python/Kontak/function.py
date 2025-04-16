@@ -1,10 +1,10 @@
-def take_name(daftar_kontak):
-    for i, kontak in enumerate(daftar_kontak, start=1):
+def take_name(daftar_kontak) -> None:
+    for i, kontak in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {kontak['nama']}")
     print("0. Kembali")
     print("===========================")
 
-def display_kontak(daftar_kontak, index: int):
+def display_kontak(daftar_kontak, index: int) -> None:
     if 0 <= index < len(daftar_kontak):
         selected = daftar_kontak[index]
         print("===========================")
@@ -17,7 +17,7 @@ def display_kontak(daftar_kontak, index: int):
         print("Tidak ada dalam List !")
         print("===========================")
 
-def kontak_baru():
+def kontak_baru() -> None:
     nama = input("Masukkan Nama : ")
     email = input("Masukkan Email : ")
     telepon = input("Masukkan No Telp : ")
@@ -29,7 +29,7 @@ def kontak_baru():
     print(f"{nama} berhasil ditambahkan")
     return tmp_kontak
 
-def hapus_kontak(daftar_kontak):
+def hapus_kontak(daftar_kontak) -> None:
     for i, value in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {value["nama"]}")
 
@@ -44,7 +44,7 @@ def hapus_kontak(daftar_kontak):
         print("===========================")
         print("Tidak ada dalam List !")
 
-def cari_kontak(daftar_kontak):
+def cari_kontak(daftar_kontak) -> None:
     while True:
         print("===========================")
         print("1. Nama")
@@ -88,3 +88,22 @@ def cari_kontak(daftar_kontak):
         else:
             print("Pilihan tidak valid. Masukkan 1 atau 2.")
             continue
+        
+def edit_kontak(daftar_kontak) -> None:
+    for i, kontak in enumerate(daftar_kontak, start = 1):
+        print(f"{i}. {kontak['nama']}")
+
+        edit = input("Mau edit kontak yang mana (masukkan nama): ").lower()
+        
+        if edit == kontak["nama"].lower():
+            edit_nama = input("Masukkan Nama: ")
+            edit_email = input("Masukkan Email: ")
+            edit_telepon = input("Masukkan No Telp: ")
+
+            kontak["nama"] = edit_nama
+            kontak["email"] = edit_email
+            kontak["telepon"] = edit_telepon
+
+            print("Kontak berhasil diubah.")
+            return kontak
+    print("Kontak tidak ditemukan.")

@@ -14,7 +14,7 @@ while True:
     print("2. Tambah Kontak")
     print("3. Hapus Kontak")
     print("4. Cari Kontak")
-    print("TODO : Can Edit Contact ?")
+    print("5. Edit Kontak")
     print("0. Keluar")
     print("===========================")
 
@@ -39,6 +39,9 @@ while True:
 
     elif menu == "4":
         kontak = function.cari_kontak(daftar_kontak)
+
+    elif menu == "5":
+        kontak = function.edit_kontak(daftar_kontak)
 
     else:
         print("Data Harus Integer !")
