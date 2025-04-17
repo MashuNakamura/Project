@@ -1,6 +1,16 @@
 # Function display the Contact List
 
-def take_name(daftar_kontak) -> None:
+def take_name_asc(daftar_kontak) -> None:
+    daftar_kontak.sort(key=lambda x: x['nama'])
+    for i, kontak in enumerate(daftar_kontak, start = 1):
+        print(f"{i}. {kontak['nama']}")
+        
+def take_name_desc(daftar_kontak) -> None:
+    daftar_kontak.sort(key=lambda x: x['nama'], reverse = True)
+    for i, kontak in enumerate(daftar_kontak, start = 1):
+        print(f"{i}. {kontak['nama']}")
+
+def detail_name(daftar_kontak) -> None:
     for i, kontak in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {kontak['nama']}")
     print("0. Kembali")

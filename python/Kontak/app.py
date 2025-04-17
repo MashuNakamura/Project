@@ -10,11 +10,13 @@ daftar_kontak = [
 while True:
     print("===========================")
     print("# Menu")
-    print("1. Daftar Kontak")
-    print("2. Tambah Kontak")
-    print("3. Hapus Kontak")
-    print("4. Cari Kontak")
+    print("1. Daftar Kontak (Asc)")
+    print("2. Daftar Kontak (Desc)")
+    print("3. Detail Kontak")
+    print("4. Tambah Kontak")
     print("5. Edit Kontak")
+    print("6. Hapus Kontak")
+    print("7. Cari Kontak")
     print("0. Keluar")
     print("===========================")
 
@@ -23,26 +25,32 @@ while True:
         break
 
     elif menu == "1":
+        function.take_name_asc(daftar_kontak)
+        
+    elif menu == "2":
+        function.take_name_desc(daftar_kontak)
+
+    elif menu == "3":
         while True:
-            function.take_name(daftar_kontak)
+            function.detail_name(daftar_kontak)
             menu_kontak = int(input("Pilih Nama Kontak : "))
             if menu_kontak == 0:
                 break
             function.display_kontak(daftar_kontak, int(menu_kontak) - 1)
 
-    elif menu == "2":
+    elif menu == "4":
         kontak = function.kontak_baru()
         daftar_kontak.append(kontak)
-
-    elif menu == "3":
-        kontak = function.hapus_kontak(daftar_kontak)
-
-    elif menu == "4":
-        kontak = function.cari_kontak(daftar_kontak)
-
+        
     elif menu == "5":
         kontak = function.edit_kontak(daftar_kontak)
 
+    elif menu == "6":
+        kontak = function.hapus_kontak(daftar_kontak)
+
+    elif menu == "7":
+        kontak = function.cari_kontak(daftar_kontak)
+    
     else:
         print("Data Harus Integer !")
 
