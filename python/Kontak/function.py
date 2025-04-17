@@ -1,8 +1,12 @@
+# Function display the Contact List
+
 def take_name(daftar_kontak) -> None:
     for i, kontak in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {kontak['nama']}")
     print("0. Kembali")
     print("===========================")
+
+# Function to Display one of Contact
 
 def display_kontak(daftar_kontak, index: int) -> None:
     if 0 <= index < len(daftar_kontak):
@@ -17,6 +21,8 @@ def display_kontak(daftar_kontak, index: int) -> None:
         print("Tidak ada dalam List !")
         print("===========================")
 
+# Function to add new Contact
+
 def kontak_baru() -> None:
     nama = input("Masukkan Nama : ")
     email = input("Masukkan Email : ")
@@ -28,6 +34,8 @@ def kontak_baru() -> None:
     }
     print(f"{nama} berhasil ditambahkan")
     return tmp_kontak
+
+# Function to delete contact from dict
 
 def hapus_kontak(daftar_kontak) -> None:
     for i, value in enumerate(daftar_kontak, start = 1):
@@ -44,6 +52,7 @@ def hapus_kontak(daftar_kontak) -> None:
         print("===========================")
         print("Tidak ada dalam List !")
 
+# Function for search contact based name or number
 def cari_kontak(daftar_kontak) -> None:
     while True:
         print("===========================")
@@ -89,16 +98,17 @@ def cari_kontak(daftar_kontak) -> None:
             print("Pilihan tidak valid. Masukkan 1 atau 2.")
             continue
         
+# Function Edit Contact (Can use by number of the daftar_kontak or nama)
 def edit_kontak(daftar_kontak) -> None:
     for i, kontak in enumerate(daftar_kontak, start = 1):
         print(f"{i}. {kontak['nama']}")
-
-        edit = input("Mau edit kontak yang mana (masukkan nama): ").lower()
-        
-        if edit == kontak["nama"].lower():
-            edit_nama = input("Masukkan Nama: ")
-            edit_email = input("Masukkan Email: ")
-            edit_telepon = input("Masukkan No Telp: ")
+     
+    edit = input("Mau edit kontak yang mana (masukkan nama): ").lower()   
+    for i, kontak in enumerate(daftar_kontak , start = 1):
+        if edit == kontak["nama"].lower() or int(edit) == i:
+            edit_nama = input("Masukkan Nama : ")
+            edit_email = input("Masukkan Email : ")
+            edit_telepon = input("Masukkan No Telp : ")
 
             kontak["nama"] = edit_nama
             kontak["email"] = edit_email
