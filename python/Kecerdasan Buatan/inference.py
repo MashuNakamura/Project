@@ -24,4 +24,4 @@ while True:
     if not applied:
         break
 
-print("Semua fakta yang diperoleh:", facts)
+print("Semua fakta yang diperoleh:", sorted(facts))
