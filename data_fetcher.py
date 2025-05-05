@@ -1,5 +1,20 @@
 import csv
 
+# Note :
+
+# Type
+# E (Extraversion) vs I (Introversion)
+# S (Sensing) vs N (iNtuition)
+# T (Thinking) vs F (Feeling)
+# J (Judging) vs P (Perceiving)
+
+# Score
+# score1: ketika user menjawab 1 (Strongly Disagree)
+# score2: ketika user menjawab 2 (Disagree)
+# score3: ketika user menjawab 3 (Neutral)
+# score4: ketika user menjawab 4 (Agree)
+# score5: ketika user menjawab 5 (Strongly Agree)
+
 class DataFetcher:
     def __init__(self, file_path: str) -> None:
         # Declare Data type
