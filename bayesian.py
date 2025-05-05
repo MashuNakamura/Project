@@ -46,17 +46,42 @@ class BayesianMBTIApp:
 
     # Print tampilan pertanyaan
     def run(self):
+        answer_info = {
+            1: "Strongly Disagree",
+            2: "Disagree",
+            3: "Neutral",
+            4: "Agree",
+            5: "Strongly Agree"
+        }
+        
         print("Welcome to the Bayesian MBTI Test!")
         print("Answer each question from 1 (Strongly Disagree) to 5 (Strongly Agree).")
 
         for idx, (question, answer_likelihoods) in enumerate(self.questions):
-            print(f"\nQuestion {idx+1}: {question}")
             while True:
-                answer = int(input("Your answer (1-5): "))
-                if answer in [1, 2, 3, 4, 5]:
-                    break
-                else:
-                    print("Please enter a number between 1 and 5.")
+                # Menampilkan top 3 probabilitas MBTI
+                top_3 = sorted(self.type_probabilities.items(), key=lambda x: x[1], reverse=True)[:3]
+                print("Current Top 3 MBTI Types:")
+                for mbti_type, prob in top_3:
+                    print(f"{mbti_type}: {self.type_probabilities[mbti_type]:.2f}")
+
+                # Menampilkan pertanyaan
+                print(f"\nQuestion {idx+1}: {question}")
+
+                # Menampilkan informasi untuk setiap jawaban
+                print("\nAnswer options:")
+                for key, description in answer_info.items():
+                    print(f"{key}: {description}")
+
+                try:
+                    answer = int(input("\nYour answer (1-5): "))
+                    if answer in [1, 2, 3, 4, 5]:
+                        break
+                    else:
+                        print("Please enter a number between 1 and 5.")
+                except ValueError:
+                    print("Invalid input. Please enter a number between 1 and 5.")
+
 
             # Kalau ditemukan jawaban, maka update si probabilities
             if answer in answer_likelihoods:
