@@ -12,10 +12,10 @@ if __name__ == "__main__":
         print("4. Show Count")
         print("5. Exit")
 
-        pilihan = input("Select menu : ")
+        pilihan = input("[INFO] Select menu : ")
 
         if pilihan == "1":
-            data = int(input("Input new data : "))
+            data = int(input("[INFO] Input new data : "))
             cs.push(data)
 
         elif pilihan == "2":

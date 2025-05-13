@@ -17,14 +17,14 @@ if __name__ == "__main__":
         print(f"[INFO] Dataset : {s.dataset}")
         
         # User select menu by input
-        menu = int(input("Input Menu : "))
+        menu = int(input("[INFO] Input Menu : "))
         
         if menu == 0:
             print("[INFO] Thank you for visiting")
             break
         
         elif menu == 1:
-            data = input('Input data : ')
+            data = input('[INFO] Input data : ')
             s.push(data)
             
         elif menu == 2:
