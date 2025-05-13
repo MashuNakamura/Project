@@ -8,14 +8,14 @@ if __name__ == "__main__":
         print("======= MENU =======")
         print("1. Push (Add)")
         print("2. Pop (Delete)")
-        print("3. Tampilkan Stack")
-        print("4. Tampilkan Count")
-        print("5. Keluar")
+        print("3. Show Stack")
+        print("4. Show Count")
+        print("5. Exit")
 
-        pilihan = input("Pilih menu : ")
+        pilihan = input("Select menu : ")
 
         if pilihan == "1":
-            data = int(input("Masukkan data : "))
+            data = int(input("Input new data : "))
             cs.push(data)
 
         elif pilihan == "2":
@@ -28,7 +28,7 @@ if __name__ == "__main__":
             cs.display_count()
 
         elif pilihan == "5":
-            print("[INFO] Tuhan Memberkati.")
+            print("[INFO] God Bless You.")
             break
 
         else:

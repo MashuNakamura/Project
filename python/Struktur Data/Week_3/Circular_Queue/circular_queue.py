@@ -5,44 +5,38 @@ class CircularQueue:
         self.size = size
         self.queue = [None] * size
         self.front = self.rear = - 1
-        self.random_pos = random.randint(0, self.size - 1)
-        self.current_pos = self.random_pos
+        self.random_pos = random.randint(0, size - 1)
+        self.count = 0
         self.is_first = False
 
     def is_empty(self):
-        return self.front == -1
+        return self.count == 0
 
     def is_full(self):
-        return (self.rear + 1) % self.size == self.front
+        return self.count == self.size
 
     def enqueue(self, data):
         if self.is_full():
-            print("Queue Penuh!")
+            print("[INFO] Queue Full!")
             return
         
-        elif self.is_empty() and self.is_first == False:
+        elif self.is_first == False:
             self.front = self.rear = self.random_pos
             self.is_first = True
-        elif self.is_empty() and self.is_first == True:
-            self.front = self.rear = self.current_pos
-        else:
-            self.rear = (self.rear + 1) % self.size
-        
+            
+        self.rear = (self.rear + 1) % self.size  
         self.queue[self.rear] = data
+        self.count += 1
 
     def dequeue(self):
         if self.is_empty():
-            print("Queue Kosong!")
-            return None
+            print("[INFO] Queue Empty!")
+            return
 
+        self.front = (self.front + 1) % self.size
         removed = self.queue[self.front]
         self.queue[self.front] = None
-
-        if self.front == self.rear:
-            self.front = self.rear = - 1
-        else:
-            self.front = (self.front + 1) % self.size
-
+        self.count -= 1
         return removed
 
     def display(self):
@@ -55,4 +49,4 @@ class CircularQueue:
                 visual.append(str(item))
 
         result = ", ".join(visual)
-        print("Queue  :", f"[{result}]")
+        print("[INFO] Queue  :", f"[{result}]")
