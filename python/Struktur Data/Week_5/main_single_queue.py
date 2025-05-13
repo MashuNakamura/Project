@@ -7,29 +7,30 @@ if __name__ == "__main__":
         print("======= MENU =======")
         print("1. Enqueue (Add)")
         print("2. Dequeue (Delete)")
-        print("3. Tampilkan Queue")
-        print("4. Tampilkan Count")
-        print("5. Keluar")
+        print("3. Show Queue")
+        print("4. Show Count")
+        print("5. Exit")
+        print("====================")
 
-        pilihan = input("Pilih menu : ")
+        menu = input("Select menu : ")
 
-        if pilihan == "1":
-            data = int(input("Masukkan data : "))
+        if menu == "1":
+            data = int(input("[INFO] Input new data : "))
             q.enqueue(data)
 
-        elif pilihan == "2":
+        elif menu == "2":
             q.dequeue()
             
-        elif pilihan == "3":
+        elif menu == "3":
             q.display_queue()
 
-        elif pilihan == "4":
+        elif menu == "4":
             q.display_count()
 
-        elif pilihan == "5":
-            print("Tuhan Memberkati.")
+        elif menu == "5":
+            print("[INFO] God Bless You.")
             break
 
         else:
-            print("Invalid Menu")
+            print("[INFO] Invalid Menu")
             continue
