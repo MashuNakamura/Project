@@ -28,9 +28,9 @@ if __name__ == "__main__":
             cs.display_count()
 
         elif pilihan == "5":
-            print("Tuhan Memberkati.")
+            print("[INFO] Tuhan Memberkati.")
             break
 
         else:
-            print("Invalid Menu")
+            print("[INFO] Invalid Menu")
             continue
