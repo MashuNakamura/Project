@@ -10,33 +10,29 @@ if __name__ == "__main__":
         print("2. Dequeue Front")
         print("3. Enqueue Back")
         print("4. Dequeue Back")
-        print("5. Tampilkan Queue")
-        print("6. Tampilkan Count")
-        print("7. Keluar")
+        print("5. Show Queue")
+        print("6. Show Count")
+        print("7. Exit")
 
-        pilihan = input("Pilih menu: ")
+        pilihan = input("[INFO] Select menu: ")
 
         if pilihan == "1":
-            data = int(input("Masukkan data untuk Enqueue Front: "))
+            data = int(input("[INFO] Input new Front data : "))
             q.enqueue_front(data)
 
         elif pilihan == "2":
             removed_data = q.dequeue_front()
             if removed_data is not None:
-                print(f"Data yang dihapus dari depan: {removed_data}")
-            else:
-                print("Tidak ada data yang bisa dihapus, queue kosong!")
+                print(f"[INFO] Deleted Front data : {removed_data}")
 
         elif pilihan == "3":
-            data = int(input("Masukkan data untuk Enqueue Back: "))
+            data = int(input("[INFO] Input new Back data : "))
             q.enqueue_back(data)
 
         elif pilihan == "4":
             removed_data = q.dequeue_back()
             if removed_data is not None:
-                print(f"Data yang dihapus dari belakang: {removed_data}")
-            else:
-                print("Tidak ada data yang bisa dihapus, queue kosong!")
+                print(f"[INFO] Deleted Back data : {removed_data}")
 
         elif pilihan == "5":
             q.display_queue()
@@ -45,8 +41,8 @@ if __name__ == "__main__":
             q.display_count()
 
         elif pilihan == "7":
-            print("Terima kasih, Tuhan Yesus Memberkati.")
+            print("[INFO] God Bless You.")
             break
 
         else:
-            print("Menu tidak valid. Silakan pilih menu yang benar.")
+            print("[INFO] Invalid Menu.")
