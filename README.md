@@ -1,3 +1,9 @@
-# Project Mashu
+# Middle Test Prinsip Pengembangan Perangkat Lunak
 
-### This is all of my code during college at University Catholic Darma Cendika
+## Federico Matthew Pratama - 233405001
+
+### Terdapat 3 Studi Kasus
+
+- [x] Kalkulator sederhana dengan Strategy Pattern
+- [x] Todo List dengan Command Pattern
+- [x] Sistem Pemantau suhu dengan Observer Pattern
